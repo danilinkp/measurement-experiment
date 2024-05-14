@@ -1,0 +1,12 @@
+#!/bin/gnuplot -persist
+reset
+
+set terminal svg size 1920, 1080
+set output '../postproc_graphs/linear_in.svg'
+
+set xlabel "Количество замеров, шт"
+set ylabel "Время, нс"
+
+plot '../preproc_data/main_index_in.txt' using 1:2 with linespoints
+replot '../preproc_data/main_pointer_index_in.txt' using 1:2 with linespoints
+replot '../preproc_data/main_pointer_in.txt' using 1:2 with linespoints
